@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EvaCoreWeb.Models.Receita>
+@{
+    ViewData["Title"] = "Receitas";
+}
+
+<h2> @ViewData["Title"]</h2>
+
+<p>
+    <a asp-area="" asp-controller="Receitas" asp-action="Create">Novo Registro</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.isn_receita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dsc_receita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isn_status_receita)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isn_receita)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dsc_receita)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isn_status_receita)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.isn_receita">Editar registro</a> @*asp-action direciona pra rotina de mesmo nome em controller*@
+                    <a asp-action="Desativa" asp-route-id="@item.isn_receita">Desativa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

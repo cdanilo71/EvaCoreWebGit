@@ -1,0 +1,30 @@
+﻿@model EvaCoreWeb.Models.Classificacao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Classificacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dsc_classificacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dsc_classificacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.isn_status_classificacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isn_status_classificacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.isn_classificacao">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

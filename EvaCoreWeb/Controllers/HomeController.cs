@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using EvaCoreWeb.Models;
+using EvaCoreWeb.Models.ViewModels;
+
 
 namespace EvaCoreWeb.Controllers
 {
@@ -17,7 +18,8 @@ namespace EvaCoreWeb.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Bem vindo!";
+            ViewData["email"] = "cdanilo@yahoo.com";
 
             return View();
         }
@@ -25,7 +27,6 @@ namespace EvaCoreWeb.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 

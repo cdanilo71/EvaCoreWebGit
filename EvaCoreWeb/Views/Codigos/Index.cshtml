@@ -1,0 +1,56 @@
+﻿@model IEnumerable<EvaCoreWeb.Models.Codigo>
+@{
+    ViewData["Title"] = "Codigos";
+}
+
+<h2>Codigos</h2>
+
+<p>
+    <a asp-area="" asp-controller="Codigos" asp-action="Create">Novo Registro</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.isn_codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dsc_codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dsc_codigo_de_barra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isn_status_codigo)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isn_codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dsc_codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dsc_codigo_de_barra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isn_status_codigo)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.isn_codigo">Editar registro</a> @*asp-action direciona pra rotina de mesmo nome em controller*@
+                    <a asp-action="Desativa" asp-route-id="@item.isn_codigo">Desativa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

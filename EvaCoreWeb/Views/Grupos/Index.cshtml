@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EvaCoreWeb.Models.Grupo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dsc_grupo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isn_status_grupo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dsc_grupo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isn_status_grupo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.isn_grupo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.isn_grupo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.isn_grupo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

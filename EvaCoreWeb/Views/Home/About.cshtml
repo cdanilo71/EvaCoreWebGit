@@ -1,7 +1,68 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Sobre";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<main>
+    <div id="main_div" class="container-fluid">
+        <div class="row">
+            <div class="d-none d-xl-block col-xl-7 banner">
+            </div>
+            <div class="container col-md-6 col-lg-5 col-xl-4">
+                <div class="row primeira-linha">
+                    <div class="vl"></div>
+                    <h1 class="text-title">Digite <strong>seus dados</strong></h1>
+                </div>
+                <div class="container">
+                    <div id="msg_erro" class="alert alert-danger alert-dismissible fade show alert-background error" role="alert" style="display:none">
 
-<p>Use this area to provide additional information.</p>
+                    </div>
+                    <form method="post" id="idFormLoginSegurado">
+                        <input type="hidden" id="documento" name="documento" />
+                        <input type="hidden" id="tipoDocumento" name="tipoDocumento" />
+                        <input type="hidden" id="isSenhaExpirada" name="isSenhaExpirada" />
+                        <input type="hidden" id="mensagem" name="mensagem" />
+                        <input type="hidden" id="cn" name="cn" />
+                        <input type="hidden" id="token" name="token" />
+                        <input type="hidden" id="isConcierge" name="isConcierge" />
+                        <input type="hidden" name="tipoPortal" value="saude" id="tpPortal" />
+                        <input type="hidden" name="redirectUrl" value="" id="redirectUrl" />
+                        <input type="hidden" name="urlPortalOdonto" value="http://portal.bradescodental.com.br/" id="urlPortalOdonto" />
+                        <input type="hidden" name="urlBSaude" value="https://wwws.bradescosaude.com.br/" id="urlBSaude" />
+                        <div class="form-group div-tipoAcesso">
+                            <label for="tipos-acesso" class="tipo-acesso">Tipo de acesso</label>
+                            <select id="link" class="form-control">
+                                <option value="inicioLoginSegurado.do">Beneficiário</option>
+                                <option value="/PCBS-GerenciadorPortal/td/loginReferenciado.do">Referenciado</option>
+                                <option value="inicioLoginEmpresaSaude.do">Contratante</option>
+                            </select>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Seu E-mail ou CPF" id="loginUsuario" name="emailcpfcnpj" required="required" class="form-control" aria-required="true">
+                        </div>
+                        <div class="form-group password-div">
+                            <input type="password" placeholder="Sua Senha" id="senha" name="password" required="required" class="password form-control" aria-required="true">
+                            <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+                        </div>
+                        <button id="btnSubmitSegurado" type="button" class="btn btn-primary button-acessar"><span class="text-button">Acessar</span></button>
+                    </form>
+                    <div class="container-links">
+                        <div class="links-vermelho">
+                            <a href="inicioGerarSegundaViaSenhaSegurado.do">Esqueci minha senha &#10095;</a>
+                        </div>
+                        <div class="links-vermelho">
+                            <a href="inicioGerarSegundaViaEmailSegurado.do">Esqueci meu e-mail &#10095;</a>
+                        </div>
+                        <div class="links-vermelho">
+                            <a href="inicioTrocarEmailSegurado.do">Alterar meu e-mail &#10095;</a>
+                        </div>
+                        <div class="links-vermelho">
+                            <span class="primeiro-acesso">Primeiro acesso?</span><a href="inicioPrimeiroAcessoSegurado.do">&nbsp;Cadastre-se &#10095;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
